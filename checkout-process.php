@@ -70,6 +70,15 @@ $item_details = [];
 for($num = 1; $num < $no; $num++ ){
 	array_push($item_details, ${'item'.$num});
 }
+$ongkir = 2000000;
+$item_ongkir = array(
+    'id' => 'a'.rand(),
+    'price' => $ongkir,
+    'quantity' => 1,
+    'name' => "Ongkir"
+);
+
+array_push($item_details, $item_ongkir);
 
 // Optional
 // $item_details = array($item1_details, $item2_details);

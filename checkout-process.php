@@ -27,24 +27,53 @@ $transaction_details = array(
     'gross_amount' => 94000, // no decimal allowed for creditcard
 );
 
-// Optional
-$item1_details = array(
+$product = [array(
     'id' => 'a1',
     'price' => 100000,
     'quantity' => 1,
     'name' => "Ebook Belajar PHP OOP at qadrLabs"
-);
-
-// Optional
-$item2_details = array(
+),
+array(
     'id' => 'a2',
     'price' => 180000,
     'quantity' => 1,
     'name' => "Ebook Belajar Laravel 8 at qadrLabs"
-);
+)];
+
+$no = 1;
+foreach($product as $p){
+    ${'item'.$no++} = array(
+        'id' => $p['id'],
+        'price' => $p['price'],
+        'quantity' => $p['quantity'],
+        'name' => $p['name']
+    );
+}
+
 
 // Optional
-$item_details = array($item1_details, $item2_details);
+// $item1_details = array(
+//     'id' => 'a1',
+//     'price' => 100000,
+//     'quantity' => 1,
+//     'name' => "Ebook Belajar PHP OOP at qadrLabs"
+// );
+
+// Optional
+// $item2_details = array(
+//     'id' => 'a2',
+//     'price' => 180000,
+//     'quantity' => 1,
+//     'name' => "Ebook Belajar Laravel 8 at qadrLabs"
+// );
+$item_details = [];
+for($num = 1; $num < $no; $num++ ){
+	array_push($item_details, ${'item'.$num});
+}
+
+var_dump($item_details);
+// Optional
+// $item_details = array($item1_details, $item2_details);
 
 // Optional
 $billing_address = array(

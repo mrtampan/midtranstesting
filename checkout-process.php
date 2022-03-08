@@ -71,7 +71,6 @@ for($num = 1; $num < $no; $num++ ){
 	array_push($item_details, ${'item'.$num});
 }
 
-var_dump($item_details);
 // Optional
 // $item_details = array($item1_details, $item2_details);
 
